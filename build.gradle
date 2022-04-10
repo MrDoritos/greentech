@@ -1,0 +1,51 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+        maven {
+            name = "sonatype"
+            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+    }
+}
+
+apply plugin: 'forge'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+version = "1.1"
+group= "org.iansweb.greentech"
+archivesBaseName = "Greentech"
+
+//jar {
+//   manifest {
+//       attributes 'FMLAT': 'draconicplus_at.cfg'
+//	   attributes 'FMLCorePlugin': 'ru.nanolive.draconicplus.DPHookLoader'
+//       attributes 'FMLCorePluginContainsFMLMod': 'true'
+//   }
+//}
+
+repositories {
+	mavenCentral()
+    maven {
+       	name = "ic2" 
+      	url = "http://maven.ic2.player.to" 
+    }
+}
+
+minecraft {
+    version = "1.7.10-10.13.4.1614-1.7.10"
+    runDir = "eclipse"
+}
+
+dependencies {
+	compile 'net.industrial-craft:industrialcraft-2:2.2.828-experimental:dev'
+
+}
